@@ -1,6 +1,13 @@
 package com.ozdal.hrms.entities.concretes;
 
+
+import java.util.List;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.ozdal.hrms.core.entities.User;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +17,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","businessExperiencies","schools"})
+
 public class Candidate  {
 	
 	@Id
@@ -28,6 +37,14 @@ public class Candidate  {
 	
 	@Column(name="birth_year")
 	private int birthYear;
+	
+	
+	@OneToMany(mappedBy="candidate")
+    private List<School> schools;
+	
+	
+	@OneToMany(mappedBy="candidate")
+	private List<BusinessExperience> businessExperiencies;
 	
 	@OneToOne()
 	@JoinColumn(name="user_id")

@@ -2,15 +2,13 @@ package com.ozdal.hrms.business.abstracts;
 
 import java.util.List;
 
-import com.ozdal.hrms.core.entities.User;
 import com.ozdal.hrms.core.utilities.results.DataResult;
 import com.ozdal.hrms.core.utilities.results.Result;
+import com.ozdal.hrms.entities.concretes.School;
 
-
-public interface UserService {
+public interface SchoolService {
 	
-	DataResult<List<User>> getAll();
-	Result addUser(User user);
-	
+	DataResult<List<School>> getAll();
+	Result addSchool(School school);
 
 }

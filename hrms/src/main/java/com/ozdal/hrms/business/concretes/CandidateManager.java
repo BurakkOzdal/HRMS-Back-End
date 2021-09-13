@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ozdal.hrms.business.abstracts.CandidateService;
+import com.ozdal.hrms.core.dataAccess.UserDao;
 import com.ozdal.hrms.core.utilities.results.DataResult;
 import com.ozdal.hrms.core.utilities.results.ErrorResult;
 import com.ozdal.hrms.core.utilities.results.Result;
@@ -15,7 +16,7 @@ import com.ozdal.hrms.core.utilities.validationServices.concretes.MailVerificati
 import com.ozdal.hrms.core.utilities.validationServices.concretes.MernisManager;
 import com.ozdal.hrms.core.utilities.validationServices.concretes.PersonVerificationManager;
 import com.ozdal.hrms.dataAccess.abstracts.CandidateDao;
-import com.ozdal.hrms.dataAccess.abstracts.UserDao;
+
 import com.ozdal.hrms.entities.concretes.Candidate;
 
 @Service
