@@ -9,4 +9,5 @@ import com.ozdal.hrms.entities.concretes.Candidate;
 public interface CandidateService {
 	DataResult<List<Candidate>> getAll();
 	Result addCandidate(Candidate candidate);
+	DataResult<Candidate> getById(int candidateId);
 }

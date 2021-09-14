@@ -5,9 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 
 import com.sun.istack.NotNull;
 
@@ -19,24 +20,24 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="foreign_languagies")
-public class ForeignLanguage {
-	
+@Table(name="profile_pictures")
+public class ProfilePicture {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
 	
-	@NotBlank
+	@Column(name="picture_url")
 	@NotNull
-	@NotEmpty
-	@Column(name="language")
-	private String language;
+	@NotBlank
+	private String pictureUrl;
 	
-	@Column(name="level")
-	private int level;
+	@Column(name="public_id")
+	private String publicId;
 	
-	
-
+	@OneToOne()
+	@JoinColumn(name="candidate_id",referencedColumnName = "id")
+	private Candidate candidate;
 }

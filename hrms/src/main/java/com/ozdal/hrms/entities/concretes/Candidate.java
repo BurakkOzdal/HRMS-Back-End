@@ -46,6 +46,9 @@ public class Candidate  {
 	@OneToMany(mappedBy="candidate")
 	private List<BusinessExperience> businessExperiencies;
 	
+	@OneToOne(mappedBy = "candidate", cascade = CascadeType.ALL)
+	private ProfilePicture picture;
+	
 	@OneToOne()
 	@JoinColumn(name="user_id")
 	private User user;
