@@ -17,8 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","businessExperiencies","schools"})
-
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","businessExperiencies","schools","picture","socialMedias"})
 public class Candidate  {
 	
 	@Id
@@ -46,8 +45,15 @@ public class Candidate  {
 	@OneToMany(mappedBy="candidate")
 	private List<BusinessExperience> businessExperiencies;
 	
+	@OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
+	private List<SocialMediaLink> socialMedias;
+	
+	
 	@OneToOne(mappedBy = "candidate", cascade = CascadeType.ALL)
 	private ProfilePicture picture;
+	
+	@OneToOne(mappedBy = "candidate",cascade=CascadeType.ALL)
+	private CoverLetter coverLetter;
 	
 	@OneToOne()
 	@JoinColumn(name="user_id")

@@ -16,7 +16,6 @@ import com.ozdal.hrms.core.utilities.results.Result;
 import com.ozdal.hrms.core.utilities.results.SuccessDataResult;
 import com.ozdal.hrms.core.utilities.results.SuccessResult;
 import com.ozdal.hrms.dataAccess.abstracts.ProfilePictureDao;
-import com.ozdal.hrms.entities.concretes.Candidate;
 import com.ozdal.hrms.entities.concretes.ProfilePicture;
 
 @Service
