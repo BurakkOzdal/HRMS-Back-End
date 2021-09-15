@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","businessExperiencies","schools","picture","socialMedias"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","businessExperiencies","schools","picture","socialMedias","coverLetter"})
 public class Candidate  {
 	
 	@Id
